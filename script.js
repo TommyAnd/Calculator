@@ -1,6 +1,6 @@
 var operator;
-var num1;
-var num2;
+var num1 = null;
+var num2 = null;
 
 function insert(num){
     document.form.screen.value = document.form.screen.value+num;
