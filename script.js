@@ -14,9 +14,13 @@ function c(){
 }
 
 function oper(op){
-    num1 = document.form.screen.value;
-    operator = op;
-    document.form.screen.value = null;
+    if (num1 != null){
+        uguale()
+    } else {
+        num1 = document.form.screen.value;
+        operator = op;
+        document.form.screen.value = null;
+    }
 }
 
 function history(){
