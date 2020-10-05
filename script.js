@@ -2,18 +2,18 @@ var operator;
 var num1 = null;
 var num2 = null;
 
-function insert(num){
+function insert(num){ // QUesta funzione mostra i numeri
     document.form.screen.value = document.form.screen.value+num;
 }
 
-function c(){
+function c(){  // Questa funzione azzera la calcolatrice
     document.form.screen.value = null;
     document.form.history.value = null;
     num1 = null;
     num2 = null;
 }
 
-function oper(op){
+function oper(op){ // Questa funzione controlla se è già stato scelto un operatore
     if (num1 != null){
         uguale()
     } else {
@@ -23,30 +23,30 @@ function oper(op){
     }
 }
 
-function history(){
+function history(){ // Stampa a video le operazioni
     document.form.history.value = num1 + " " + operator + " " + num2 + " =";
  }
 
-function uguale(){
+function uguale(){ // Questa funzione esegue i calcoli
     num2 = document.form.screen.value;
     document.form.screen.value = null;
-    if (operator == '+'){
+    if (operator == '+'){  // In caso di operatore +, somma i due numeri
         ris = parseFloat(num1) + parseFloat(num2);
-    } else if (operator == '-'){
+    } else if (operator == '-'){ // In caso di operatore -, sottrai il primo numero al secondo
         ris = parseFloat(num1) - parseFloat(num2);
-    } else if (operator == '*'){
+    } else if (operator == '*'){ // In caso di operatore *, moltiplica i due numeri
         ris = parseFloat(num1) * parseFloat(num2);
-    } else if (operator == '/'){
+    } else if (operator == '/'){ // In caso di operatore /, divide il primo numero per il secondo
         ris = parseFloat(num1) / parseFloat(num2);
     }
 
-    if (ris){
+    if (ris){ // Stampa a video il risultato
         document.form.screen.value = ris;
         history();
     }
     
 }
-function back(){
+function back(){ // Quetsa funzione rimuove un carattere
     var ris = document.form.screen.value;
     document.form.screen.value = ris.substring(0,ris.length-1);
  }
